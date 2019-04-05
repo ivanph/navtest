@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/nav_graph"
+            app:startDestination="@id/navigation_home">
+
+    <fragment android:id="@+id/navigation_home"
+              android:name="com.test.navtest.Home"
+              android:label="Home"
+              tools:layout="@layout/fragment_home">
+
+        <argument
+                android:name="title"
+                android:defaultValue="123" />
+    </fragment>
+
+    <fragment android:id="@+id/navigation_dashboard"
+              android:name="com.test.navtest.Dashboard"
+              android:label="Dashboard"
+              tools:layout="@layout/fragment_dashboard">
+        <action android:id="@+id/action_navigation_dashboard_to_next" app:destination="@id/next"/>
+    </fragment>
+
+    <fragment android:id="@+id/navigation_notifications"
+              android:name="com.test.navtest.Notifications"
+              android:label="Notifications"
+              tools:layout="@layout/fragment_notifications"/>
+    <fragment android:id="@+id/next" android:name="com.test.navtest.Next" android:label="fragment_next"
+              tools:layout="@layout/fragment_next"/>
+</navigation>
